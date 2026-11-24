@@ -1,0 +1,113 @@
+{
+  "title": "Boundary Blitz 3D",
+  "language": [
+    "en"
+  ],
+  "hook": "Smash massive sixes under floodlights",
+  "game_overview": "Step into a floodlit 3D cricket stadium to read spin and swing deliveries, time power shots, and chase targets across tournaments and 50 campaign levels.",
+  "artstyle": "3d-cartoon",
+  "genre": "arcade",
+  "winning_condition": "Score equal to or greater than the target runs before running out of deliveries or losing all allotted wickets in the current match.",
+  "losing_condition": "Lose all allotted wickets via Bowled, Caught Out, or Run Out dismissals, or run out of balls with fewer runs than the target score.",
+  "player_mode": "single_player",
+  "supported_orientations": [
+    "landscape",
+    "any"
+  ],
+  "input_methods": [
+    "keyboard",
+    "touch",
+    "mouse"
+  ],
+  "score_options": {
+    "score_type": "points",
+    "score_order": "higher_is_better"
+  },
+  "low_end_device_support": false,
+  "mobile_playable": true,
+  "content_descriptors": [],
+  "controls": [
+    {
+      "input": "A / Left Arrow, W / Up Arrow, D / Right Arrow or On-Screen Shot Chart Buttons (< LEG, ^ STRAIGHT, OFF >)",
+      "action": "Aim the 3D Shot Chart direction across Leg Side, Straight, or Off Side."
+    },
+    {
+      "input": "Spacebar or LOFTED (6/4) Button",
+      "action": "Execute a Lofted Power Shot for 4s and 6s with higher aerial catch risk if mistimed."
+    },
+    {
+      "input": "S / Down Arrow or GROUND (Drive) Button",
+      "action": "Execute a Grounded Drive along the turf through outfield gaps for 1s, 2s, or 4s."
+    },
+    {
+      "input": "Q / Left Shift or DEFEND Button",
+      "action": "Execute a Defensive Block near the crease to deaden pace and survive yorkers."
+    },
+    {
+      "input": "R / Enter or RUN (+1) Button \u00b7 C or CANCEL Button",
+      "action": "Call an extra run while the ball is live in the outfield, or cancel a run and dive back to the crease before the fielder's throw causes a Run Out."
+    }
+  ],
+  "sections": [
+    {
+      "title": "Design Pillars",
+      "content": "1. Read & React Depth: Every delivery telegraphs subtle air movement and bounce ring color cues so skilled batters can distinguish fast straight balls, swing, spin, and yorkers. 2. Broadcast Spectacle: Dynamic camera framing transitions smoothly from low-angle bowler run-ups past the glass Members Pavilion and live 3D Stadium Scoreboard to dramatic parabolic shot tracking under lattice-steel LED floodlight towers. 3. Accessible Arcade Flow: Crisp three-button shot selection paired with directional aiming delivers tactical risk-versus-reward batting on both desktop keyboards and mobile touchscreens.",
+      "summary": "Core principles shaping the 3D stadium cricket experience."
+    },
+    {
+      "title": "Core Loop",
+      "content": "Each delivery begins with the articulated 3D bowler sprinting in from the bowling end while a color-coded pitch marker highlights the projected bounce point on the raised clay strip. The player selects an aim direction (Leg, Straight, Off) and times a Lofted, Grounded, or Defensive swing as the ball enters the batting crease. Based on contact distance to the sweet spot, the ball launches into the 3D outfield where 9 animated fielders sprint to intercept or catch it, awarding 0, 1, 2, 4, or 6 runs\u2014or triggering Bowled (popping independent bails off the stumps) or Caught Out dismissals. Winning a chase advances the 8-team knockout bracket or unlocks the next stage, star ratings, and special bat skins in the 50-level campaign.",
+      "summary": "Delivery-by-delivery target chase cycle with clear match outcomes."
+    },
+    {
+      "title": "Core Mechanics",
+      "content": "1. Five Delivery Archetypes: Bowlers mix Fast Straight (high speed, true bounce), Inswing/Outswing (lateral air curve prior to pitching), Leg Spin/Off Spin (looping flight with sharp post-bounce deviation), and Yorkers (fast low full-length balls targeting the base of the stumps). 2. Three-Tier Shot System: Lofted Shots launch high parabolic arcs capable of clearing the padded boundary rope for 6 runs; Grounded Drives skim fast across the mowed turf to split fielders without aerial catch risk; Defensive Blocks absorb pace right in front of the crease. 3. Sweet-Spot Timing Calculation: 3D distance at swing execution determines Perfect Timing (high exit velocity, golden ball trail, optimal gap placement), Early/Late Timing (skied top-edge or mistimed drive toward fielders), or Miss (ball continues toward the sculpted wooden stumps and sends bails flying). 4. Active 3D Fielding Ring: Nine positioned inner-ring and boundary fielders crouch in ready stances and sprint dynamically toward the ball trajectory.",
+      "summary": "Bowling variations, timing windows, shot physics, and fielder interception."
+    },
+    {
+      "title": "3D Camera & Movement Alignment",
+      "content": "3D Coordinate & Axis Convention: Built in Three.js right-handed space (+Y is Up, +X is Right/Off-Side for a right-handed batter, -X is Left/Leg-Side, -Z points from the batting crease at +Z toward the bowling crease and Members Pavilion sightscreen at -Z). Asset Orientation Baseline: The raised 22-yard clay pitch aligns strictly along the Z-axis, with the side-on batter stationed at the +Z popping crease and all spiked cricket shoes resting flush on the pitch/turf surface. 3D Camera Perspective: During run-up and delivery, a behind-the-batter broadcast camera sits elevated at +Z looking toward -Z with subtle zoom-in damping; upon bat impact, the Shot Follow Cam smoothly interpolates to track the 3D ball arc across the stadium.",
+      "summary": "Broadcast batting camera, shot follow camera, and Three.js coordinate alignment."
+    },
+    {
+      "title": "3D Scene & Environment Structure",
+      "content": "3D Scene & Environment Separation: Set in a custom 3D twilight cricket bowl featuring procedural PBR radial/striped mowed grass (#2e7d32 and #388e3c), a crisp 30-yard inner circle, padded boundary cushions with rotating sponsor boards, a raised scuffed 22-yard clay pitch (#d7b889), a two-story glass-fronted Members Pavilion with integrated sightscreen, a live 3D Digital Stadium Scoreboard, stepped concrete grandstands with procedural crowd dot patterns, and 4 lattice-steel LED floodlight towers with subtle volumetric light cones. UI & HUD Overlay Integration: A sleek top broadcast scoreboard bar and bottom control bar occupy safe HTML/TailwindCSS zones at the viewport edges with zero scrolling.",
+      "summary": "Custom 3D stadium with PBR mowed grass, raised clay pitch, Members Pavilion, live 3D Scoreboard, and LED Floodlights."
+    },
+    {
+      "title": "Fairness Tools",
+      "content": "A color-coded glowing 3D bounce indicator ring on the raised clay pitch previews landing length and delivery type against the clean white Members Pavilion sightscreen, paired with a crisp ground drop-shadow beneath the ball.",
+      "summary": "Visual telegraphing aids for reading 3D ball depth and bounce."
+    },
+    {
+      "title": "Juice & Game Feel",
+      "content": "Anticipation Juice: Broadcast camera zoom during the bowler's coil and responsive aim-arrow preview. State Change Juice: Golden ribbon trail on Perfect shots, live 3D Jumbotron scoreboard updates, and animated crowd waves. Impact Juice: Screen-space callouts, camera shake on sixes and flying bails, stadium fireworks, and procedural Web Audio bat cracks, stump clatters, and crowd roars.",
+      "summary": "Multi-layered visual and procedural audio feedback on every delivery."
+    },
+    {
+      "title": "Social Mechanics & Audience",
+      "content": "Designed for single-player sports and arcade enthusiasts competing for high run totals, 3-star campaign mastery, unlockable championship bat skins, and tournament trophy counts.",
+      "summary": "Built for cricket fans and arcade reflex players chasing leaderboard scores."
+    },
+    {
+      "title": "Accessibility",
+      "content": "Combines distinct delivery ring hues with explicit HUD delivery-readout badges, high-contrast scoreboard typography, toggleable background music and SFX mute controls, and full parity between keyboard shortcuts and touch buttons.",
+      "summary": "Clear color-plus-label indicators and zero-scroll responsive controls."
+    },
+    {
+      "title": "Structural Integrity",
+      "content": "Clean screen flow from Main Menu (Mode Select, Squad Kit Picker, Bat Skin Selector, & Bracket/50-Level Map) -> Live 3D Stadium Match -> Match Summary / Trophy Celebration with automatic localStorage persistence.",
+      "summary": "Complete state flow with persistent tournament, campaign, and bat skin saves."
+    },
+    {
+      "title": "Virtual Touch Controls Implementation",
+      "content": "Conditionally render ergonomic bottom-corner virtual touch controls on mobile devices via useIsMobile(): Left/Straight/Right directional aim buttons in the bottom-left and Block, Drive, and Loft action buttons in the bottom-right with full pointer capture and stuck-input protection.",
+      "summary": "Responsive bottom-screen mobile touch controls with stuck-input protection."
+    },
+    {
+      "title": "Characters, Kits, 3D Bats & Game Modes",
+      "content": "Articulated 3D Cricketers & Protective Gear: Athletes feature articulated shoulder, elbow, hip, and knee joints, natural South Asian skin tones, collared numbered jerseys, and spiked shoes\u2014with helmets, padded gloves, and 3-cane-ridge leg pads for batters; webbed gloves and short pads in a low crouch for the wicketkeeper; and caps or sun hats for bowlers and fielders across all 8 squads (MUMBAI, CHENNAI, BENGALURU, KOLKATA, DELHI, HYDERABAD, RAJASTHAN, PUNJAB). Five 3D Willow Bat Skins (persisted under cricket_3d_batskin): Classic English Willow (cherry ball marks), Franchise Pro Edition (team decals), Carbon Viper (woven carbon & neon green), Royal Gold Championship (unlocked with 1 Tournament Trophy), and Inferno Blaze (magma fissures unlocked at Campaign Stage 25+).",
+      "summary": "Articulated 3D athletes, role-specific protective gear, 8 team kits, and 5 unlockable 3D bat skins."
+    }
+  ]
+}
